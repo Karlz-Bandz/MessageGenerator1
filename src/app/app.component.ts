@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+
 
 @Component({
   selector: 'app-root',
@@ -8,9 +11,43 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'HR-Helper';
 
-  boxNumber: number = 37;
+  constructor(private dialog: MatDialog) {}
 
-  boxArray = Array(this.boxNumber).fill(0);
+  messages: string[] = [];
 
+  ngOnInit(): void {
+    const storedMessagesString = localStorage.getItem("messages");
+    if(storedMessagesString != null)
+    {
+      this.messages = JSON.parse(storedMessagesString);
+    }
+  }
 
+  openDialog(index: number): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '250px'
+    });
+
+    dialogRef.componentInstance.dataEvent.subscribe(text => {
+        this.messages[index] = text;
+        localStorage.setItem("messages", JSON.stringify(this.messages));
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`)
+      
+    });
+  }
+
+  addNewTextBox(): void{
+    this.messages.push("kk");
+    localStorage.setItem("messages", JSON.stringify(this.messages));
+  }
+
+  removeTextBox(index: number): void{
+    this.messages.splice(index, 1);
+    localStorage.setItem("messages", JSON.stringify(this.messages));
+  }
+
+  
 }

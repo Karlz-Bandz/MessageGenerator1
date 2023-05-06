@@ -1,17 +1,20 @@
 <div class="container">
 <div class="myheader">
 <p class="title">HR Helper</p>
+<button class="addbtn" (click)="addNewTextBox()">+</button>
 
 </div>
 
 
 <div class="mybody">
-  <div class="note" *ngFor="let numberOfBox of boxArray; let i = index">kkkk{{i}}</div>
+  <div class="note" *ngFor="let message of messages; let i = index">
+    <div class="mybuttons">
+       <button class="removebtn" (click)="removeTextBox(i)">-</button>
+       <button class="openbtn" (click)="openDialog(i)">Edit</button>
+    </div>
+    <div class="mytext">
+      {{message}} 
+    </div>
+  </div>
 </div>
-
-
-
-
-
-
 </div>
