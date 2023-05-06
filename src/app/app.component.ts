@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 
 @Component({
@@ -11,7 +12,9 @@ import { DialogComponent } from './dialog/dialog.component';
 export class AppComponent {
   title = 'HR-Helper';
 
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private clipboard: Clipboard) {}
 
   messages: string[] = [];
 
@@ -23,11 +26,17 @@ export class AppComponent {
     }
   }
 
+  copyText(text: string): void {
+    this.clipboard.copy(text);
+  }
+
   openDialog(index: number): void {
     // this.dialog.open(DialogComponent);
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '550px',
       height: '550px',
+      data: {index: index}
+      
      
     });
 

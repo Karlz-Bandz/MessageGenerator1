@@ -12,13 +12,28 @@ export class DialogComponent {
 
   constructor(
      private dialogRef: MatDialogRef<DialogComponent>,
-     @Inject(MAT_DIALOG_DATA) public dialogData: any
+     @Inject(MAT_DIALOG_DATA) public data: any
      ) {}
 
   @Output() dataEvent = new EventEmitter<string>();
   
 
   text: string = "";
+  //textToEdit: string = "";
+  messages: string[] = [];
+
+  ngOnInit(): void{
+    
+       console.log(this.data.index);
+       const storedMessagesString = localStorage.getItem("messages");
+       if(storedMessagesString != null)
+       {
+         this.messages = JSON.parse(storedMessagesString);
+       }
+       this.text = this.messages[this.data.index];
+       console.log(this.text);
+       
+  }
 
   onSubmit(): void {
     // TODO: Submit form data
