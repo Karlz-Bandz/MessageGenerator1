@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HR-Helper';
+
+  boxNumber: number = 37;
+
+  boxArray = Array(this.boxNumber).fill(0);
+
+
 }
