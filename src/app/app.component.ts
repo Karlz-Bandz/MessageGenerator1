@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { Clipboard } from '@angular/cdk/clipboard';
+import { MessageClass } from './MessageClass';
 
 
 @Component({
@@ -16,13 +17,14 @@ export class AppComponent {
     private dialog: MatDialog,
     private clipboard: Clipboard) {}
 
-  messages: string[] = [];
+  messageObjects: MessageClass[] = [];
 
   ngOnInit(): void {
-    const storedMessagesString = localStorage.getItem("messages");
+   
+    const storedMessagesString = localStorage.getItem("objects");
     if(storedMessagesString != null)
     {
-      this.messages = JSON.parse(storedMessagesString);
+      this.messageObjects = JSON.parse(storedMessagesString);
     }
   }
 
@@ -31,7 +33,6 @@ export class AppComponent {
   }
 
   openDialog(index: number): void {
-    // this.dialog.open(DialogComponent);
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '550px',
       height: '550px',
@@ -40,9 +41,9 @@ export class AppComponent {
      
     });
 
-    dialogRef.componentInstance.dataEvent.subscribe(text => {
-        this.messages[index] = text;
-        localStorage.setItem("messages", JSON.stringify(this.messages));
+    dialogRef.componentInstance.dataEvent.subscribe(messageObject => {
+        this.messageObjects[index] = messageObject;
+        localStorage.setItem("objects", JSON.stringify(this.messageObjects));
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -52,13 +53,14 @@ export class AppComponent {
   }
 
   addNewTextBox(): void{
-    this.messages.push("kk");
-    localStorage.setItem("messages", JSON.stringify(this.messages));
+    let messageClass: MessageClass = {title: "", message: ""};
+    this.messageObjects.push(messageClass);
+    localStorage.setItem("objects", JSON.stringify(this.messageObjects));
   }
 
   removeTextBox(index: number): void{
-    this.messages.splice(index, 1);
-    localStorage.setItem("messages", JSON.stringify(this.messages));
+    this.messageObjects.splice(index, 1);
+    localStorage.setItem("objects", JSON.stringify(this.messageObjects));
   }
 
   

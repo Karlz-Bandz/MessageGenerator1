@@ -2,7 +2,8 @@
 <h2>Dialog Title</h2>
     <div>
       <form (ngSubmit)="onSubmit()">
-        <textarea [(ngModel)]="text" [ngModelOptions]="{standalone: true}"></textarea>
+        <input [(ngModel)]="messageObject.title" [ngModelOptions]="{standalone: true}">
+        <textarea [(ngModel)]="messageObject.message" [ngModelOptions]="{standalone: true}"></textarea>
         <button type="submit">Submit</button>
         <button type="button" (click)="onCancel()">Cancel</button>
       </form>

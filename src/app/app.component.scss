@@ -36,30 +36,38 @@
             //display: inline;
             margin: 20px;
             float: left;
-            background-color: black;
-            width: 460px;
-            height: 320px;
+            background-color: white;
+            border-radius: 5px;
+            width: 380px;
+            height: 420px;
+            border: solid 1px black;
             
             .mybuttons{
                  
-                .removebtn{
-
-                }
-                .openbtn{
-
+                .btn{
+                    margin: 6px;
+                    width: 80px;
+                    height: 35px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    background-color: black;
+                    color: white;
+                    border: none;
                 }
             }
 
             .mytext{
-                width: 400px;
-                height: 260px;
+                width: 93%;
+                height: 80%;
                 background-color: white;
                 word-wrap: break-word;
-                // margin-left: auto;
-                // margin-right: auto;
                 white-space: pre-line;
-                margin: auto;
-                margin: auto;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                
+                overflow-y: auto;
+                font-family: 'Sen', sans-serif;
             }
 
         }

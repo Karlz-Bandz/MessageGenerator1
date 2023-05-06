@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MessageClass } from '../MessageClass';
 
 
 @Component({
@@ -15,30 +16,27 @@ export class DialogComponent {
      @Inject(MAT_DIALOG_DATA) public data: any
      ) {}
 
-  @Output() dataEvent = new EventEmitter<string>();
+  @Output() dataEvent = new EventEmitter<MessageClass>();
   
-
-  text: string = "";
-  //textToEdit: string = "";
-  messages: string[] = [];
+  messageObject: MessageClass = {title: "", message: ""};
+  messageObjects: MessageClass[] = [];
 
   ngOnInit(): void{
     
-       console.log(this.data.index);
-       const storedMessagesString = localStorage.getItem("messages");
+      const storedMessagesString = localStorage.getItem("objects");
        if(storedMessagesString != null)
        {
-         this.messages = JSON.parse(storedMessagesString);
+         this.messageObjects = JSON.parse(storedMessagesString);
        }
-       this.text = this.messages[this.data.index];
-       console.log(this.text);
+       this.messageObject = this.messageObjects[this.data.index];
+       console.log(this.messageObject);
        
   }
 
   onSubmit(): void {
     // TODO: Submit form data
-    console.log(this.text);
-    this.dataEvent.emit(this.text);
+    console.log(this.messageObject);
+    this.dataEvent.emit(this.messageObject);
     this.dialogRef.close({ success: true });
   }
 

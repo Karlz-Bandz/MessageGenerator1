@@ -7,15 +7,16 @@
 
 
 <div class="mybody">
-  <div class="note" *ngFor="let message of messages; let i = index">
+    <div class="note" *ngFor="let message of messageObjects; let i = index">
     <div class="mybuttons">
-      <button class="btn" (click)="copyText(message)">Copy</button>
+      <button class="btn" (click)="copyText(message.message)">Copy</button>
       <button class="btn" (click)="openDialog(i)">Edit</button>
       <button class="btn" (click)="removeTextBox(i)">Delete</button>
        
     </div>
     <div class="mytext">
-      {{message}} 
+      <h2>{{message.title}}</h2>
+      {{message.message}} 
     </div>
   </div>
 </div>
