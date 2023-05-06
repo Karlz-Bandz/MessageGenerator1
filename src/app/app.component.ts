@@ -24,8 +24,11 @@ export class AppComponent {
   }
 
   openDialog(index: number): void {
+    // this.dialog.open(DialogComponent);
     const dialogRef = this.dialog.open(DialogComponent, {
-      width: '250px'
+      width: '550px',
+      height: '550px',
+     
     });
 
     dialogRef.componentInstance.dataEvent.subscribe(text => {
