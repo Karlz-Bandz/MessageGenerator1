@@ -10,22 +10,11 @@
   <div class="note" *ngFor="let message of messages; let i = index">
     <div class="mybuttons">
        <button class="removebtn" (click)="removeTextBox(i)">-</button>
+       <button class="openbtn" (click)="openDialog(i)">Edit</button>
     </div>
     <div class="mytext">
-      {{message}} {{i}}
+      {{message}} 
     </div>
-  
-  
-  
-  
-  
-  
   </div>
 </div>
-
-
-
-
-
-
 </div>
