@@ -2,7 +2,9 @@
   <h2   class="title-custom">Editor</h2>
       <div class="small-container">
         <form (ngSubmit)="onSubmit()">
+          <p class="desc">Title</p>
           <input class="title-form" [(ngModel)]="messageObject.title" [ngModelOptions]="{standalone: true}">
+          <p class="desc">Text</p>
           <textarea class="text-area" [(ngModel)]="messageObject.message" [ngModelOptions]="{standalone: true}"></textarea>
           <div class="buttons">
           <button class="btn" type="submit">Submit</button>
