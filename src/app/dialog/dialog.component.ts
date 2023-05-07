@@ -1,28 +1,43 @@
 import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MessageClass } from '../MessageClass';
+
+
 
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss']
+  
 })
 export class DialogComponent {
 
   constructor(
      private dialogRef: MatDialogRef<DialogComponent>,
-     @Inject(MAT_DIALOG_DATA) public dialogData: any
+     @Inject(MAT_DIALOG_DATA) public data: any
      ) {}
 
-  @Output() dataEvent = new EventEmitter<any>();
+  @Output() dataEvent = new EventEmitter<MessageClass>();
   
+  messageObject: MessageClass = {title: "", message: ""};
+  messageObjects: MessageClass[] = [];
 
-  text: string = "";
+  ngOnInit(): void{
+    
+      const storedMessagesString = localStorage.getItem("objects");
+       if(storedMessagesString != null)
+       {
+         this.messageObjects = JSON.parse(storedMessagesString);
+       }
+       this.messageObject = this.messageObjects[this.data.index];
+       console.log(this.messageObject);
+       
+  }
 
   onSubmit(): void {
     // TODO: Submit form data
-    console.log(this.text);
-    this.dataEvent.emit(this.text);
+    console.log(this.messageObject);
+    this.dataEvent.emit(this.messageObject);
     this.dialogRef.close({ success: true });
   }
 

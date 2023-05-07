@@ -1,8 +1,24 @@
-<h2 mat-dialog-title>Dialog Title</h2>
-    <mat-dialog-content>
-      <form (ngSubmit)="onSubmit()">
-        <textarea [(ngModel)]="text"  [ngModelOptions]="{standalone: true}"></textarea>
-        <button type="submit">Submit</button>
-        <button type="button" (click)="onCancel()">Cancel</button>
-      </form>
+<mat-dialog-content class="custom-modalbox">
+  <h2   class="title-custom">Editor</h2>
+      <div class="small-container">
+        <form (ngSubmit)="onSubmit()">
+          <input class="title-form" [(ngModel)]="messageObject.title" [ngModelOptions]="{standalone: true}">
+          <textarea class="text-area" [(ngModel)]="messageObject.message" [ngModelOptions]="{standalone: true}"></textarea>
+          <div class="buttons">
+          <button class="btn" type="submit">Submit</button>
+          <button class="btn" type="button" (click)="onCancel()">Cancel</button>
+          </div>
+        </form>
+      </div>
+  </mat-dialog-content>
+<!-- <h2 mat-dialog-title>Dialog Title</h2>
+<mat-dialog-content>
+ 
+  <p>This is the dialog content.</p>
 </mat-dialog-content>
+<mat-dialog-actions>
+  
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button color="primary">Save</button>
+</mat-dialog-actions> -->
+

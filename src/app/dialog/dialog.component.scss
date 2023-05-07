@@ -1,0 +1,62 @@
+.custom-modalbox {
+   
+            
+    background: linear-gradient(to right,red 0%,yellow 100%);
+    height: 400px;
+    border: solid 2px black;
+   
+    h2{
+        text-align: center;
+        color: black;   
+        font-family: 'Sen', sans-serif;
+    }
+
+    .small-container{
+        background: linear-gradient(to right,red 0%,yellow 100%);
+        height: 330px;
+        text-align: center;
+
+        input{
+            width: 300px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            // margin-left: auto;
+            // margin-right: auto;
+            font-family: 'Sen', sans-serif;
+            color: black;
+            
+
+        }
+
+        .text-area{
+width: 380px;
+height: 250px;
+margin-top: 10px;
+resize: none;
+border-radius: 5px;
+border: none;
+font-family: 'Sen', sans-serif;
+color: black;
+        }
+
+        .buttons{
+            display: block;
+            .btn{
+                float: right;
+                margin: 10px;
+                width: 80px;
+                    height: 35px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    background-color: black;
+                    color: white;
+                    border: none;
+            }
+            .btn:hover{
+                background-color: gray;
+            }
+        }
+    }
+
+}
