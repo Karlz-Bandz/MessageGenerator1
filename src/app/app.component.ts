@@ -9,6 +9,7 @@ import { MessageClass } from './MessageClass';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
+  
 })
 export class AppComponent {
   title = 'HR-Helper';
@@ -35,8 +36,9 @@ export class AppComponent {
   openDialog(index: number): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '550px',
-      height: '550px',
-      data: {index: index}
+      height: '400px',
+      data: {index: index},
+      panelClass: 'custom-modalbox'
       
      
     });
