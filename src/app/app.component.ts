@@ -36,7 +36,6 @@ export class AppComponent {
   openDialog(index: number): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '650px',
-      height: '420px',
       data: {index: index},
       panelClass: 'custom-modalbox'
       
