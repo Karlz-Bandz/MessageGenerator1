@@ -1,4 +1,29 @@
-# HRHelper
+# MessageGenerator1
+
+When we have to send a lot of mails or messages at job
+this application helps to make it quicker. 
+You can add, delete and edit as many messages you want.
+![Start](https://github.com/Karlz-Bandz/MessageGenerator1/assets/57764322/42686b90-f5b8-44e6-9f0c-ee44af063ba1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
