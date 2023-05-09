@@ -3,7 +3,16 @@
 When we have to send a lot of mails or messages at job
 this application helps to make it quicker. 
 You can add, delete and edit as many messages you want.
-![Start](https://github.com/Karlz-Bandz/MessageGenerator1/assets/57764322/42686b90-f5b8-44e6-9f0c-ee44af063ba1)
+
+First if you want to add new box you can click the "+" button like below
+
+![Addbtn](https://github.com/Karlz-Bandz/MessageGenerator1/assets/57764322/1a724112-0f17-4e13-8c6d-f01e58e0677d)
+
+Next each box has the three buttons Delete, Edit and Copy
+
+![empty_sheets](https://github.com/Karlz-Bandz/MessageGenerator1/assets/57764322/a999e01f-1ace-49f2-90ed-0c4549c100c1)
+
+
 
 
 
