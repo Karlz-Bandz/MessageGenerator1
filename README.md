@@ -1,5 +1,9 @@
 # MessageGenerator1
 
+Link to deployed application: https://messagegenerator-d6cd3.web.app/
+
+----------------------------------------------------------------------------------------------------------
+
 When we have to send a lot of mails or messages at job
 this application helps to make it quicker. 
 You can add, delete and edit as many messages you want.
