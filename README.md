@@ -8,29 +8,19 @@ First if you want to add new box you can click the "+" button like below
 
 ![Addbtn](https://github.com/Karlz-Bandz/MessageGenerator1/assets/57764322/1a724112-0f17-4e13-8c6d-f01e58e0677d)
 
-Next each box has the three buttons Delete, Edit and Copy
+Next, we can see that each box has the three buttons Delete, Edit and Copy
 
 ![empty_sheets](https://github.com/Karlz-Bandz/MessageGenerator1/assets/57764322/a999e01f-1ace-49f2-90ed-0c4549c100c1)
 
+To generate the message template click edit button and add the title and text
 
+![edit](https://github.com/Karlz-Bandz/MessageGenerator1/assets/57764322/8d944752-b39f-4238-83d0-4f53702b92d9)
 
+At the end message is ready to copy and all you have to do is just click one button. 
+All messages are stored in LocalStorage so you don't lose your data after closing
+the browswer.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![created](https://github.com/Karlz-Bandz/MessageGenerator1/assets/57764322/8fef35ee-983a-46e7-9ac6-180bee19d67a)
 
 
 
