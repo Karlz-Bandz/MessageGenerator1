@@ -9,9 +9,9 @@
 <div class="mybody">
     <div class="note" *ngFor="let message of messageObjects; let i = index">
     <div class="mybuttons">
-      <button class="btn" (click)="copyText(message.message)">Copy</button>
-      <button class="btn" (click)="openDialog(i)">Edit</button>
-      <button class="btn" (click)="removeTextBox(i)">Delete</button>
+      <button class="btn" (click)="copyText(message.message)"><img class="btnimg2" src="assets/img/copy.svg" alt="Button Image"></button>
+      <button class="btn" (click)="openDialog(i)"><img class="btnimg" src="assets/img/edit.svg" alt="Button Edit"></button>
+      <button class="btn" (click)="removeTextBox(i)"><img class="btnimg" src="assets/img/delete.svg" alt="Button Edit"></button>
        
     </div>
     <div class="mytext">
@@ -19,6 +19,9 @@
       {{message.message}} 
     </div>
   </div>
+</div>
+<div class="myfooter">
+  <a href="https://github.com/Karlz-Bandz" target="_blank">Copyright &copy; 2023 Karol Melak</a>
 </div>
 
 </div>
