@@ -10,7 +10,7 @@ You can add, delete and edit as many messages you want.
 
 First if you want to add new box you can click the "+" button like below
 
-![Addbtn](https://github.com/Karlz-Bandz/MessageGenerator1/assets/57764322/1a724112-0f17-4e13-8c6d-f01e58e0677d)
+![Addbtn](https://github.com/Karlz-Bandz/MessageGenerator1/assets/57764322/06f06925-018b-435c-a969-924642e6d24e)
 
 Next, we can see that each box has the three buttons Delete, Edit and Copy
 
